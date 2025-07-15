@@ -13,13 +13,13 @@ export const Layout = ({ children }: LayoutProps) => {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="h-screen bg-background flex flex-col overflow-hidden">
       <Header onToggleSidebar={toggleSidebar} />
       
-      <div className="flex flex-1">
+      <div className="flex flex-1 overflow-hidden">
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         
-        <main className="flex-1 lg:ml-0">
+        <main className="flex-1 lg:ml-0 overflow-y-auto">
           {children}
         </main>
       </div>
