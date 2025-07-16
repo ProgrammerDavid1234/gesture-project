@@ -7,25 +7,25 @@ export const FlowDiagram = () => {
     {
       icon: Camera,
       title: "Capture Gesture",
-      description: "Real-time hand and posture detection using advanced computer vision",
+      description: "Real-time hand detection using computer vision",
       color: "text-accent"
     },
     {
       icon: Brain,
       title: "AI Analysis",
-      description: "Deep learning models process and analyze gesture patterns",
+      description: "Deep learning models process gesture patterns",
       color: "text-primary"
     },
     {
       icon: Target,
       title: "Recognition Result",
-      description: "Accurate gesture identification with confidence scores",
+      description: "Accurate gesture identification with confidence",
       color: "text-accent-glow"
     }
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       {/* Title */}
       <div className="text-center mb-8 sm:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent">
@@ -41,7 +41,7 @@ export const FlowDiagram = () => {
         {steps.map((step, index) => (
           <div key={index} className="flex flex-col lg:flex-row items-center w-full lg:w-auto">
             {/* Step Card */}
-            <div className="flow-step w-full max-w-xs sm:max-w-sm lg:w-72 xl:w-80 h-56 sm:h-64 flex flex-col items-center justify-center mx-auto">
+            <div className="flow-step w-full max-w-xs sm:max-w-sm lg:w-60 xl:w-64 h-56 sm:h-64 flex flex-col items-center justify-center mx-auto">
               <div className={`p-3 sm:p-4 rounded-full bg-gradient-primary mb-3 sm:mb-4 ${step.color}`}>
                 <step.icon className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-primary-foreground" />
               </div>
