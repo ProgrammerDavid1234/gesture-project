@@ -19,8 +19,10 @@ export const Layout = ({ children }: LayoutProps) => {
       <div className="flex flex-1 overflow-hidden">
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         
-        <main className="flex-1 lg:ml-0 overflow-y-auto">
-          {children}
+        <main className="flex-1 lg:ml-0 overflow-y-auto max-w-full">
+          <div className="max-w-full overflow-x-hidden">
+            {children}
+          </div>
         </main>
       </div>
     </div>

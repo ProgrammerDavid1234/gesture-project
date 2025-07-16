@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu, User, ChevronDown, Hand, Activity, Gamepad2, Stethoscope, Shield } from "lucide-react";
 import { AuthModal } from "@/components/auth/AuthModal";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -39,15 +40,18 @@ export const Header = ({ onToggleSidebar }: HeaderProps) => {
         </Button>
 
         {/* Logo */}
-        <div className="flex items-center space-x-2 mr-8">
+        <div className="flex items-center space-x-2">
           <Activity className="h-8 w-8 text-primary" />
           <span className="font-bold text-xl bg-gradient-primary bg-clip-text text-transparent">
             GestureAI
           </span>
         </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 flex-1">
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* Navigation - moved to far right */}
+        <nav className="hidden md:flex items-center space-x-6">
           <a href="/" className="text-foreground hover:text-primary transition-colors">
             Home
           </a>
@@ -77,8 +81,8 @@ export const Header = ({ onToggleSidebar }: HeaderProps) => {
           </DropdownMenu>
         </nav>
 
-        {/* Auth buttons */}
-        <div className="flex items-center space-x-2">
+        {/* Auth buttons and theme toggle */}
+        <div className="flex items-center space-x-2 ml-4">
           <Button 
             variant="ghost" 
             onClick={() => handleAuthClick('login')}
@@ -92,6 +96,8 @@ export const Header = ({ onToggleSidebar }: HeaderProps) => {
           >
             Sign Up
           </Button>
+          
+          <ThemeToggle />
           
           {/* User icon for mobile */}
           <Button variant="ghost" size="icon" className="sm:hidden">
